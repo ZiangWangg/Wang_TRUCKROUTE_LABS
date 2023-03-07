@@ -1,0 +1,54 @@
+﻿@model DataOutput
+ <div class="card card-title m-1 p-1">
+<table>
+    <thead>
+        <tr>
+            <th>Truck number</th>
+            <th>Truck model</th>
+            <th>Truck make</th>
+            <th>Route number</th>
+        </tr>
+    </thead>
+    <tbody>
+			<div class="bg-light p-1">
+        @foreach (var item in Model.Trucks)
+        { 
+       
+                <tr>
+                <td>@item.TruckID</td>
+                    <td>@item.t_model</td>
+                    <td>@item.t_make</td>
+                <td>@item.RouteID</td>
+				</tr>
+	
+				}
+</div> 
+    </tbody>
+</table>
+
+<form method="post" asp-action="AddTruck">
+	<div asp-validation-summary="All"></div>
+
+	<p>
+		<label asp-for="@Model.Truck.t_model">Truck model: </label>
+		<input asp-for="@Model.Truck.t_model" />
+	</p>
+
+	<p>
+		<label asp-for="@Model.Truck.t_make">Truck make: </label>
+		<input asp-for="@Model.Truck.t_make" />
+	</p>
+
+	<p>
+		<label asp-for="@Model.Truck.RouteID">Route number: </label>
+		<select asp-for="@Model.Truck.RouteID">
+			@foreach (var item in Model.Routes)
+			{
+				<option value="@item.RouteID">@item.RouteID</option>
+			}	
+		</select>
+	</p>
+
+	<button type="submit">ADD Truck</button>
+	<a asp-action="Bdash"> Back to Dashboard</a>
+</form>

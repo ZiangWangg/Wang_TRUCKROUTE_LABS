@@ -1,0 +1,47 @@
+﻿@{
+	ViewData["Title"] = "ZW’s Truck Route Management System";
+	
+}
+@model Account
+ <div class="card card-title m-1 p-1">
+        
+<h1>Welcome to Registration Page</h1>
+<form method="post" asp-action="ActionFunction">
+	<div asp-validation-summary="All"></div>
+	<div class="bg-light p-1">
+	<p>
+		<label asp-for="Fname">First Name: </label>
+		<input asp-for="Fname" />
+	</p>
+		</div>
+	<p>
+		<label asp-for="Lname">Last Name: </label>
+		<input asp-for="Lname" />
+	</p>
+	<div class="bg-light p-1">
+	<p>
+		<label asp-for="Email">Email: </label>
+		<input asp-for="Email" />
+	</p>
+		</div>
+	<p>
+		<label asp-for="Phone">Phone: </label>
+		<input asp-for="Phone" />
+	</p>
+	<div class="bg-light p-1">
+	<p>
+		<label asp-for="Password">Password: </label>
+		<input type="password" asp-for="Password" />
+	</p>
+		</div>
+	<p>
+		<label asp-for="CPassword">Confirmation Password: </label>
+		<input type="password" asp-for="CPassword" />
+	</p>
+		<div class="bg-light p-1">
+	<button type="submit">Submit Request</button>
+		</div>
+	<br />
+	<a asp-action="GotoLogin"> Login</a><br />
+</form>
+  </div> 

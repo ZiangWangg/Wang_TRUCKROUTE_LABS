@@ -1,0 +1,48 @@
+﻿@model DataOutput
+<div class="card card-title m-1 p-1">
+<table>
+    <thead>
+        <tr>
+            <th>Route Number</th>
+            <th>Route Name</th>
+            <th>Route Length</th>
+            <th>Route Pay Per_km</th>
+        </tr>
+    </thead>
+    <tbody>
+        <div class="bg-light p-1">
+        @foreach (var item in Model.Routes)
+        {
+                    <tr>
+                <td>@item.RouteID</td>
+                <td>@item.route_name</td>
+                <td>@item.r_length</td>
+                <td>@item.r_pay_per_km</td>
+                    </tr>
+                }</div>
+    </tbody>
+</table>
+</div>
+
+<form method="post" asp-action="AddRoute">
+	<div asp-validation-summary="All"></div>
+	<p>
+        <label asp-for="Route.route_name">Route Name: </label>
+        <input asp-for="Route.route_name" />
+	</p>
+
+	<p>
+        <label asp-for="Route.r_length">Route Length: </label>
+        <input asp-for="Route.r_length" />
+	</p>
+
+	<p>
+        <label asp-for="Route.r_pay_per_km">Route Pay Per km: </label>
+        <input asp-for="Route.r_pay_per_km" />
+	</p>
+
+	<button type="submit">ADD Route</button>
+<a asp-action="Bdash"> Back to Dashboard</a>
+</form>
+
+<br />

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Truck>
+<table>
+    <thead>
+        <tr>
+            <th>Truck number</th>
+            <th>Truck model</th>
+            <th>Truck make</th>
+            <th>Route number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                <td>@item.TruckID</td>
+                    <td>@item.t_model</td>
+                    <td>@item.t_make</td>
+                <td>@item.RouteID</td>
+                </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Bdash">Back to Dashboard</a>
+<br />

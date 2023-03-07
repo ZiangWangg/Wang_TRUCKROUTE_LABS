@@ -1,0 +1,23 @@
+﻿@{
+	ViewData["Title"] = "ZW’s Truck Route Management System";
+
+}
+@model Account
+ 
+<h1>Login Page</h1>
+<form method="post" asp-action="login">
+	<div class="bg-light p-1">
+	<p>
+		<label asp-for="Email">Email: </label>
+		<input asp-for="Email" />
+	</p>
+	</div>
+
+	<p>
+		<label asp-for="Password">Password: </label>
+		<input type="password" asp-for="Password" />
+	</p>
+	<div class="bg-light p-1">
+	<button type="submit">Login</button>
+</div>
+</form>
